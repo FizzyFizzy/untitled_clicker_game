@@ -1,6 +1,5 @@
 import pygame
-
-
+import gameWindow
 def main():
     pygame.init()
     icon = pygame.image.load("icon.png")
@@ -13,7 +12,11 @@ def main():
 
     #main loop
     running = True
+    game_window = gameWindow.GameWindow(screen)
     while running:
+        screen.fill((0,0,0))
+        game_window.update(screen)
+        pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
