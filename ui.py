@@ -5,14 +5,13 @@ pygame.font.init()
 FONT = pygame.font.SysFont("Arial", 24)
 SMALL_FONT = pygame.font.SysFont("Arial", 20)
 
-UI_WIDTH = 220
-
+BARRIER_WIDTH = 5
 
 class UI:
 
-    def drawUI(self, screen: pygame.display):
-        self.UIPanel = pygame.Rect(screen.get_width() - UI_WIDTH, 0, UI_WIDTH, screen.get_height())
-        print(screen.get_width() - UI_WIDTH, 0, UI_WIDTH, screen.get_height())
+    def drawUI(self, screen: pygame.display, ui_boundary):
+        self.UIPanel = pygame.Rect(ui_boundary, 0, screen.get_width(), screen.get_height())
+        self.UIBarrier = pygame.Rect(ui_boundary, 0, BARRIER_WIDTH, screen.get_height())
 
-    def __init__(self, screen):
-        self.drawUI(screen)
+    def __init__(self, screen, ui_boundary):
+        self.drawUI(screen, ui_boundary)
