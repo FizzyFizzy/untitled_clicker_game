@@ -1,16 +1,18 @@
 import pygame
 import gameWindow
+
+
 def main():
     pygame.init()
     icon = pygame.image.load("icon.png")
 
-    #screen setup
+    # screen setup
     WIDTH, HEIGHT = 1000, 1000
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Untitled Clicker Game")
     pygame.display.set_icon(icon)
 
-    #main loop
+    # main loop
     running = True
     game_window = gameWindow.GameWindow(screen)
     while running:
